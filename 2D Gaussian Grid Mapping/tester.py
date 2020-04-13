@@ -6,7 +6,7 @@
 # | | | | (_| | | | |  __/  __/\__ \ | | |
 # \_| |_/\__,_|_| |_|\___|\___||___/_| |_|
 # Date:   2020-04-12 21:34:03
-# Last Modified time: 2020-04-12 21:34:44
+# Last Modified time: 2020-04-12 22:06:40
 
 
 import numpy as np
@@ -19,7 +19,7 @@ def main():
 	xy_res=0.25
 	std_dev=5
 
-	for i in range(0,5):
+	for i in range(0,25):
 		obs_x=(np.random.rand(10)-0.5)*10.0
 		obs_y=(np.random.rand(10)-0.5)*10.0
 

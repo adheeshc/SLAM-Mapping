@@ -6,7 +6,7 @@
 # | | | | (_| | | | |  __/  __/\__ \ | | |
 # \_| |_/\__,_|_| |_|\___|\___||___/_| |_|
 # Date:   2020-04-12 19:03:44
-# Last Modified time: 2020-04-12 21:12:24
+# Last Modified time: 2020-04-12 22:11:59
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -90,10 +90,14 @@ class ray_cast():
 		plt.pcolor(x,y,prob_map,vmax=1,cmap=plt.cm.Blues)
 		plt.axis("Equal")
 
-	def plot(self):
+	def plot(self,record=False):
+		if record:
+			plt.pause(5)
 		self.algorithm()
 		plt.cla()
 		self.draw_heatmap(self.prob_map, self.x_min, self.x_max, self.y_min, self.y_max, self.xy_res)
-		plt.plot(self.obs_x, self.obs_y, "xr")
-		plt.plot(0.0, 0.0, "ok")
+		plt.plot(self.obs_x, self.obs_y, "xr",zorder=2,label="Obstacle")
+		plt.plot(0.0, 0.0, "ok",zorder=3,label="Robot")
+		plt.title("Ray Casting")
+		plt.legend(loc=1)
 		plt.pause(1.0)
